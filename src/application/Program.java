@@ -30,6 +30,26 @@ public class Program {
 		for(Seller obj: listall) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("\n===TEST 4: seller DELETE =====");
+		sellerDao.deleteById(7);
+		sellerDao.deleteById(8);
+		sellerDao.deleteById(9);
+		sellerDao.deleteById(10);
+		sellerDao.deleteById(11);
+		sellerDao.deleteById(12);
+		sellerDao.deleteById(13);
+		sellerDao.deleteById(14);
+
+		listall = sellerDao.findAll();
+		for(Seller obj: listall) {
+			System.out.println(obj);
+		}
+		
+		System.out.println("\n===TEST 5: seller insert =====");
+		Seller newSeller = new Seller(null,"Greeg","greeg@gmail.com",new Date(),4000.00,department);
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New id = "+ newSeller.getId());
 
 	}
 
